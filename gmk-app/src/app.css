@@ -1,0 +1,366 @@
+#app {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+:root {
+  --primary-color: #216b3f;
+  /* Deep Green */
+  --secondary-color: #34d399;
+  /* Emerald */
+  --accent-color: #b6f83d;
+  /* Soft Lime */
+  --light-color: #f8f9fa;
+  --dark-color: #114726;
+  /* Dark Neutral */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* VIDEO */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(135deg,
+      #174d39,
+      #225643,
+      #144528);
+  /* hijau tua → emerald → soft lime */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: white !important;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+}
+
+/* LOGO NAVBAR  */
+.logo {
+  max-width: 3rem !important;
+  height: 35px;
+  margin-bottom: 6px;
+}
+
+img {
+  height: 350px;
+  object-fit: cover;
+}
+
+/* HERO - CAROUSEL  */
+.hero-section {
+  position: relative;
+  /* min-height: 18vh; */
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/src/assets/img/bg.jpg") no-repeat center center/cover;
+  background-size: cover;
+}
+
+/* Overlay gelap biar teks & carousel jelas */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 83, 45, 0.55);
+  /* hijau transparan */
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  /* biar konten di atas overlay */
+}
+
+.carousel-hero {
+  height: 110%;
+  width: 100%;
+}
+
+.carousel-hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 
+.carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}  */
+
+/* MARQUEE  */
+
+.marquee {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.marquee-group {
+  display: flex;
+  gap: 40px;
+}
+
+.marquee-content img {
+  height: 80px;
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.3%);
+  }
+}
+
+/* About Section */
+.about-section {
+  background: #f9f9f9;
+  /* abu soft biar beda dari hero */
+}
+
+.about-section h2 {
+  font-weight: 700;
+  color: #14532d;
+  /* hijau classy */
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+p {
+  text-align: justify;
+}
+
+/* CARD  */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0 !important;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card-bidang {
+  height: 200px;
+  /* margin: 0 auto; */
+}
+
+.card-bidang h4 {
+  height: 100px;
+}
+
+.card-kebakaran {
+  margin: 0 auto;
+  height: 325px;
+}
+
+.card-database {
+  width: 80%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* TABLE  */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 600px;
+    /* biar scroll muncul tapi gak terlalu lebar */
+    /* white-space: nowrap; */
+}
+
+  .table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+  }
+}
+
+/* HIGHLIGHT  DI BERANDA*/
+/* .tarif-highlight {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+} */
+
+/* ICON BOX  */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(87, 204, 153, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.icon-box i {
+  color: var(--secondary-color);
+  font-size: 24px;
+}
+
+/* FOOTER  */
+.footer {
+  background: linear-gradient(135deg, #204a3b, #1f5843, #144528);
+  color: white;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.contact-info {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.list-tc:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
+/* BUTTON  */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: #225643;
+  border-color: #183027;
+}
+
+.btn-primary:disabled {
+  background-color: #225643;
+  border-color: #183027;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.logo-footer {
+  width: 50%;
+  height: auto;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.download-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .download-btn {
+  opacity: 1;
+}
+
+.download-btn button {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
